@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=index.html">
+    <title>ちょもらんまWEBプログラミングChannel PRポータル</title>
+    <style>
+        /* ベーススタイル */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50, #18bc9c);
+            color: #fff;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        .hero-badge {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        .btn-cta {
+            display: inline-block;
+            background-color: #ff0000; /* YouTubeカラー */
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn-cta:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        /* チャンネル紹介セクション */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #18bc9c;
+        }
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: left;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #18bc9c;
+        }
+
+        /* 特徴・学ぶコンテンツ */
+        .features {
+            padding: 80px 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: y 0.3s;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* 注目動画（プレースホルダー） */
+        .videos {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比率 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* フッター・登録誘導 */
+        .footer-cta {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .footer-cta h2 {
+            margin-bottom: 20px;
+        }
+        .copyright {
+            background-color: #1a252f;
+            color: #bbb;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.85rem;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <span class="hero-badge">YouTube チャンネル</span>
+            <h1>ちょもらんまWEBプログラミングChannel</h1>
+            <p>これからプログラミングを始めたい、WEBの技術を身につけたいと考えている方向けの学習チャンネルです。基礎から丁寧に解説します！</p>
+            <a href="https://www.youtube.com/channel/UCAPtRNyS4PuuFMPR53N_KRA" target="_blank" class="btn-cta">チャンネルを登録する</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">チャンネルについて</h2>
+            <div class="about-text">
+                <p>「ちょもらんまWEBプログラミングChannel」は、株式会社ちょもらんまが運営するYouTube公式チャンネルです。</p>
+                <p style="margin-top: 15px;">プログラミングの世界への第一歩を踏み出す方のために、必要なツールの使い方から、実際のコーディング、Webの仕組みまで「見て・触れて・学べる」コンテンツをお届けしています。初心者でも挫折しないよう、分かりやすさを大切にしています。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">このチャンネルで学べること</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🌐 HTML / CSS</h3>
+                    <p>Webサイトのデザインや骨組みを作る基礎から解説。スマートフォン対応のレスポンシブデザインや、Bootstrapを使った効率的なコーディングもカバーします。</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 JavaScript</h3>
+                    <p>Webサイトに動きをつけるプログラミング言語。基本構文から実践的な動かし方まで、動画を見ながら一緒に手を動かして学べます。</p>
+                </div>
+                <div class="card">
+                    <h3>🛠️ ビジネス・開発ツール</h3>
+                    <p>Web制作や受講に必要な基本アプリの使い方を解説。多機能ビジネスチャット「Slack」の導入方法や設定など、周辺スキルもバッチリ網羅。</p>
+                </div>
+                <div class="card">
+                    <h3>🐱 Scratch (スクラッチ)</h3>
+                    <p>直感的にコードを組み立てられるビジュアルプログラミング。まずは「プログラミングが動く楽しさ」を知る第一歩として最適な体験コースを提供します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="videos">
+        <div class="container">
+            <h2 class="section-title">動画をチェック</h2>
+            <p style="margin-bottom: 30px; color: #666;">チャンネルで公開されている学習動画の一部をご紹介します。</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCAPtRNyS4PuuFMPR53N_KRA" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-cta">
+        <div class="container">
+            <h2>プログラミングの第一歩を、ここから。</h2>
+            <p style="margin-bottom: 30px; opacity: 0.9;">動画を見ながら、あなたのペースで楽しくスキルアップしていきましょう！</p>
+            <a href="https://www.youtube.com/channel/UCAPtRNyS4PuuFMPR53N_KRA" target="_blank" class="btn-cta">YouTubeで視聴する</a>
+        </div>
+    </section>
+
+    <footer class="copyright">
+        <div class="container">
+            <p>&copy; 株式会社ちょもらんま / ちょもらんまWEBプログラミングChannel PR Page. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
